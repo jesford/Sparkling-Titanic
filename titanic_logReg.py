@@ -24,7 +24,7 @@ import pyspark_csv as pycsv
 
 os.environ["SPARK_LOCAL_IP"] = "127.0.1.1" # set local IP
 
-DATADIR = "./Python/PySpark/Titanic/data" # data directory
+DATADIR = "data" # data directory
 
 def mySparkContext():
     """
@@ -39,7 +39,7 @@ def mySparkContext():
 
 sc = mySparkContext()
 sqlCtx = SQLContext(sc)
-sc.addPyFile("Spark/spark-1.3.1-bin-hadoop2.4/pyspark_csv.py")
+sc.addPyFile("pyspark-csv/pyspark_csv.py")
 
 def loadDF(filename):
     """
